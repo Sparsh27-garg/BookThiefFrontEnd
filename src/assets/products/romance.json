@@ -1,0 +1,90 @@
+[
+	{
+		"productId": 1,
+		"productName": "Think and Grow Rich",
+		"productCode": "MOB-120",
+		"description": "To know about yourself",
+		"price": 105,
+		"imageUrl": "assets/bestsellers/bs1.jpg",
+		"manufacturer": "Napolean Hill",
+		"ostype": "Amazing Reads",
+		"rating": 4
+	},
+	{
+		"productId": 2,
+		"productName": "Objective General English",
+		"productCode": "MOB-124",
+		"description": "for your general english purposes",
+		"price": 171,
+		"imageUrl": "assets/bestsellers/bs2.jpg",
+		"manufacturer": "S.P. Bakshi",
+		"ostype": "Arihant",
+		"rating": 4
+	},
+	{
+		"productId": 3,
+		"productName": "The Immortals of Meluha",
+		"productCode": "MOB-125",
+		"description": "This is the first book in a trilogy on Shiva, the simple man whose karma re-cast him as our Mahadev, the God of Gods.",
+		"price": 349,
+		"imageUrl": "assets/bestsellers/bs3.jpg",
+		"manufacturer": "Amish Tripathi",
+		"ostype": "Westland Publication Limited",
+		"rating": 4.3
+	},
+	{
+		"productId": 4,
+		"productName": "The Power of Your Subconscious Mind",
+		"productCode": "MOB-126",
+		"description": "It deals with unknown fact on which our brain act",
+		"price": 135,
+		"imageUrl": "assets/bestsellers/bs4.jpg",
+		"manufacturer": "Murphy Joseph",
+		"ostype": "Amazing Reads",
+		"rating": 4.2
+	},
+	{
+		"productId": 5,
+		"productName": "Harry Potter and the Philosopher's Stone",
+		"productCode": "MOB-127",
+		"description": "Most thrilling harry potter story",
+		"price": 271,
+		"imageUrl": "assets/bestsellers/bs5.jpg",
+		"manufacturer": "J.K. Rowling",
+		"ostype": "Bloomsbury Publishing PLC",
+		"rating": 4.3
+	},
+	{
+		"productId": 6,
+		"productName": "Firefly - Big Damn Hero",
+		"productCode": "MOB-128",
+		"description": "The original novel tying into the critically acclaimed and much-missed Firefly series from creator Joss Whedon.",
+		"price": 380,
+		"imageUrl": "assets/romance/romance2.jpg",
+		"manufacturer": "Nancy Holder",
+		"ostype": "Titan Books (UK)",
+		"rating": 4
+	},
+	{
+		"productId": 7,
+		"productName": "Red, White & Royal Blue",
+		"productCode": "MOB-234",
+		"description": "Red, White & Royal Blue is outrageously fun. It is romantic, sexy, witty, and thrilling.",
+		"price": 334,
+		"imageUrl": "assets/romance/romance3.jpg",
+		"manufacturer": "Casey McQuiston",
+		"ostype": "St. Martin's Griffin",
+		"rating": 3.5
+	},
+	{
+		"productId": 8,
+		"productName": "Poemsia",
+		"productCode": "MOB-130",
+		"description": "VERITY WOLF dreams of being a poet--not that she'd ever admit it to anyone. ",
+		"price": 412,
+		"imageUrl": "assets/romance/romance4.jpg",
+		"manufacturer": "Lang Leav",
+		"ostype": "Andrews McMeel Publishing",
+		"rating": 4.5
+	}
+]

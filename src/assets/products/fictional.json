@@ -1,0 +1,46 @@
+[
+	{
+		"productId": 1,
+		"productName": "The Golden Key",
+		"productCode": "TAB-120",
+		"description": "...Part Shirley Jackson's stories of inner demons, part Alice's Adventures in Wonderland...part Astrid Lindgren's faith in children's resilience and part ghost story.",
+		"price": 380,
+		"imageUrl": "assets/fiction/fiction1.jpg",
+		"manufacturer": "Marian Womack",
+		"ostype": "Titan",
+		"rating": 4
+	},
+	{
+		"productId": 2,
+		"productName": "Who Fears Death",
+		"productCode": "TAB-124",
+		"description": "An award-winning literary author enters the world of magical realism with her World Fantasy Award-winning novel of a remarkable woman in post-apocalyptic Africa.",
+		"price": 271,
+		"imageUrl": "assets/fiction/fiction2.jpg",
+		"manufacturer": "Nnedi Okorafar",
+		"ostype": "HarperCollins Publisher",
+		"rating": 3
+	},
+	{
+		"productId": 3,
+		"productName": "Venom",
+		"productCode": "TAB-125",
+		"description": "The first of Titan's new series of original Marvel novels, starring Spider-Man's arch foe Venom in his anti-hero role as the Lethal Protector.",
+		"price": 349,
+		"imageUrl": "assets/fiction/fiction3.jpg",
+		"manufacturer": "James R. Tuck",
+		"ostype": "Titan",
+		"rating": 4
+	},
+	{
+		"productId": 4,
+		"productName": "Justice League",
+		"productCode": "TAB-126",
+		"description": "BlackThe Odyssey team are shown a dangerous secret that makes one thing clear -- they must escape the Ghost Sector!",
+		"price": 747,
+		"imageUrl": "assets/fiction/fiction4.jpg",
+		"manufacturer": "Joshua Williamson",
+		"ostype": "DC Comics",
+		"rating": 3
+	}
+]

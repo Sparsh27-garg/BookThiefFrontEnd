@@ -1,0 +1,103 @@
+<div *ngIf="submit" class="card cardpos">
+	<div class='card-header bg bg-primary text-white'>
+		<h5>{{ pageTitle }}</h5>
+	</div>
+	<div class="card-body">
+		<table class='table' *ngIf='selectedProducts && selectedProducts.length'
+			style="margin-bottom: 0px; margin-right: 0px">
+			<thead>
+				<tr class="tableheadercolor">
+					<th class="center">Product</th>
+					<th class="center">Quantity</th>
+					<th class="center">Price</th>
+					<th class="center">Total Price</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor='let product of selectedProducts; let i=index'>
+					<td class="center">{{product.productName}}</td>
+					<td class="center">
+						<input type="number" id="quant" class="" [(ngModel)]=product.quantity onkeypress="return (event.charCode == 8 || event.charCode == 0 || 
+						event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 
+						57" min="1" max="100" (change)="updateCart(product)">
+					</td>
+					<td class="center">{{ product.price | currency:'INR':'symbol':'1.2-2' }}</td>
+					<td class="center">{{ product.totalPrice | currency:'INR':'symbol':'1.2-2'}}</td>
+					<td>
+						<a (click)="remove(i)">
+							<span title="Delete" class="fa fa-trash"></span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th class="text-right" colspan="3">
+						<span style="margin-right: 38px">Total</span>
+					</th>
+					<td class="text-left" colspan="2">
+						<strong style="margin-left: 20px">{{ grandTotal | currency:'INR':'symbol':'1.2-2' }}</strong>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4" class="text-center">
+						<button type="button" class="btn btn-primary mr-5" (click)='onBack()'>
+							<span class="fa fa-shopping-cart"></span> Continue Shopping
+						</button>
+						<button type="button" class="btn btn-primary" (click)="checkout()">
+							Checkout
+							<span class="fa fa-play"></span>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+</div>
+
+
+
+<div *ngIf="!submit" class='card paymentcardpos'>
+	<div class='card-header bg bg-primary  text-white'>
+		<h5>{{ pageTitle }}</h5>
+	</div>
+	<div class='card-body text-center'>
+		<div> You have purchased following items.Thank you for making the payment. </div>
+		<div> Your order will be shipped soon... </div>
+		<br />
+		<table class='table' *ngIf='selectedProducts && selectedProducts.length'>
+			<thead>
+				<tr style="color: blue">
+					<th>Order Id</th>
+					<th>Product</th>
+					<th>Quantity</th>
+					<th>Price</th>
+					<th>Total Price</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor='let product of selectedProducts; let i=index'>
+					<td>{{product.orderId}}</td>
+					<td style="width: auto">{{product.productName}}</td>
+					<td>{{product.quantity}}</td>
+					<td>{{ product.price | currency:'INR':'symbol':'1.2-2' }}</td>
+					<td>{{product.totalPrice| currency:'INR':'symbol':'1.2-2'}}</td>
+				</tr>
+				<tr>
+					<td colspan="4" class="text-right">
+						<span style="margin-right: 30px">Total</span>
+					</td>
+					<td>
+						<strong>{{grandTotal|currency:'INR':'symbol':'1.2-2'}}</strong>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class='card-footer'>
+		<a class='btn btn-primary' (click)='gotoProducts()'>
+			<i class='fa fa-chevron-left'></i> Go to Products Page
+		</a>
+	</div>
+</div>

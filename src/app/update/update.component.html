@@ -1,0 +1,195 @@
+<h3><span>Select operation you want to perform</span></h3>
+							<select [ngModel]="option" (change)="onChange($event.target.value)">
+								<option value="update">Update</option>
+								<option value="delete">Delete</option>
+								<option value="add">Add</option>
+							</select>
+
+<!--Update Section-->
+<div *ngIf="option=='update'">
+<div class="container container-styles">
+	<div class="col-md-9">
+		<div class="card">
+			<div class="card-header bg bg-primary text-white">
+				<h6>Update Book Price</h6>
+			</div>
+			<div  class="card-body">
+				<form #updateForm="ngForm">
+					<div class="form-group row">
+						<label for="name" class="col-sm-3 col-3 col-form-label">Book Code</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" name="productcode" value="{{inputOption}}" [(ngModel)]="product.productCode"
+								#productcode="ngModel" required>
+						</div>
+						<div>
+							<select [ngModel]="inputOption" name="inputoption" (change)="onChange1($event.target.value)">
+								<option *ngFor='let product of products'>{{product.productCode}}</option>
+							</select>
+						</div>
+					</div>
+					<div  class="form-group row">
+						<label for="inputPrice" class="col-sm-3 col-4 col-form-label">Price</label>
+						<div class="col-sm-9">
+							<input type="number" class="form-control" name="price" #price="ngModel"
+								[(ngModel)]="product.price" required>
+						</div>
+					</div>
+
+					
+
+					<div class="form-group row">
+						<span class="col-sm-4 col-4"></span>
+						<div class="col-sm-3 col-3">
+							<button (click)="getName()" class="btn btn-primary"
+								[disabled]="!updateForm.form.valid">Update</button>
+						</div>
+						
+						<div *ngIf="successMessage!=null" class="text-success">{{successMessage}}</div>
+						<div *ngIf="errorMessage!=null" class="text-danger">{{errorMessage}}</div>
+						<br />
+						
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+	
+</div>
+</div>
+
+<!--Delete Section-->
+<div *ngIf="option=='delete'">
+	<div class="container container-styles">
+		<div class="col-md-9">
+			<div class="card">
+				<div class="card-header bg bg-primary text-white">
+					<h6>Delete Book</h6>
+				</div>
+				<div  class="card-body">
+					<form #deleteForm="ngForm">
+						<div class="form-group row">
+							<label for="name" class="col-sm-3 col-3 col-form-label">Book Code</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="productcode" value="{{inputOption}}" [(ngModel)]="product.productCode"
+									#productcode="ngModel" required>
+							</div>
+							<div>
+								<select [ngModel]="inputOption" name="inputop" (change)="onChange1($event.target.value)">
+									<option *ngFor='let product of products'>{{product.productCode}}</option>
+								</select>
+							</div>
+						</div>
+						
+	
+						
+	
+						<div class="form-group row">
+							<span class="col-sm-4 col-4"></span>
+							<div class="col-sm-3 col-3">
+								<button (click)="delete()" class="btn btn-primary"
+									[disabled]="!deleteForm.form.valid">Delete</button>
+							</div>
+							
+							<div *ngIf="successMessage!=null" class="text-success" >{{successMessage}}</div>
+							<div *ngIf="errorMessage!=null" class="text-danger">{{errorMessage}}</div>
+							<br />
+							<!-- <span class="col-sm-5 col-5" style="top:8px">
+								<a [routerLink]="['/welcome']" style="color:#337ab7;text-decoration: underline;">Cancel</a>
+							</span> -->
+						</div>
+					</form>
+				</div>
+	
+			</div>
+		</div>
+	</div>
+	</div>
+
+<!--Add Section-->
+<div *ngIf="option=='add'">
+	<div class="container container-styles">
+		<div class="col-md-9">
+			<div class="card">
+				<div class="card-header bg bg-primary text-white">
+					<h6>Add Book</h6>
+				</div>
+				<div  class="card-body">
+					<form #addForm="ngForm">
+						<div class="form-group row">
+							<label for="name" class="col-sm-3 col-3 col-form-label">Book Name</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="productname"  [(ngModel)]="product.productName"
+									#productname="ngModel" required>
+							</div>
+							
+						</div>
+						<div  class="form-group row">
+							<label for="inputPrice" class="col-sm-3 col-4 col-form-label">Price</label>
+							<div class="col-sm-9">
+								<input type="number" class="form-control" name="price" #price="ngModel"
+									[(ngModel)]="product.price" required>
+							</div>
+						</div>
+						<div  class="form-group row">
+							<label for="description" class="col-sm-3 col-4 col-form-label">Description</label>
+							<div class="col-sm-9">
+								<textarea cols="20" rows="2" class="form-control" name="description" #description="ngModel"
+									[(ngModel)]="product.description" required></textarea>
+							</div>
+						</div>
+					
+						<div  class="form-group row">
+							<label for="image" class="col-sm-3 col-4 col-form-label">Image name</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="image" #image="ngModel"
+									[(ngModel)]="product.imageUrl" required>
+							</div>
+							<span *ngIf="product.imageUrl" class="text-primary">*enter name with extension</span>
+						</div>
+						<div  class="form-group row">
+							<label for="manufacturer" class="col-sm-3 col-4 col-form-label">Author</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="manufaturer" #manufacturer="ngModel"
+									[(ngModel)]="product.manufacturer" required>
+							</div>
+						</div>
+						
+						<div  class="form-group row">
+							<label for="rating" class="col-sm-3 col-4 col-form-label">Rating</label>
+							<div class="col-sm-9">
+								<input type="number" min="1" max="5" class="form-control" name="rating" #rating="ngModel"
+									[(ngModel)]="product.rating" required>
+							</div>
+							<span *ngIf="product.rating" class="text-primary">*between [1 to 5]</span>
+
+						</div>
+						<div class="form-group row">
+							<label for="category" class="col-sm-3 col-4 col-form-label">Category</label>
+							<select [ngModel]="category" name="category" (change)="onChange2($event.target.value)">
+								<option>FICTIONAL</option>
+								<option>BEST SELLERS</option>
+							</select>
+						</div>
+	
+						<div class="form-group row">
+							<span class="col-sm-4 col-4"></span>
+							<div class="col-sm-3 col-3">
+								<button (click)="addBook()" class="btn btn-primary"
+									[disabled]="!addForm.form.valid">Add</button>
+							</div>
+							
+							<div *ngIf="successMessage!=null" class="text-success">{{successMessage}}</div>
+							<div *ngIf="errorMessage!=null" class="text-danger">{{errorMessage}}</div>
+							<br />
+							<!-- <span class="col-sm-5 col-5" style="top:8px">
+								<a [routerLink]="['/welcome']" style="color:#337ab7;text-decoration: underline;">Cancel</a>
+							</span> -->
+						</div>
+					</form>
+				</div>
+	
+			</div>
+		</div>
+	</div>
+	</div>

@@ -1,0 +1,39 @@
+<div class="container cardpos">
+	<div class="row">
+		<div class="col-7 col-md-7 offset-3 offset-md-3">
+			<div class="card">
+				<div class="card-header bg bg-primary text-white">
+					<h6>{{pageTitle}}</h6>
+				</div>
+				<div class="card-body">
+					<table class="table table-striped tablebgcolor" *ngIf="product">
+						<tr>
+							<td align="center">
+								<img [src]='product.imageUrl' [style.width.px]='imageWidth'
+									[style.margin.px]='imageMargin' class='img-thumbnail' />
+							</td>
+							<td>
+								<div class="txtcolor">
+									<h5>{{product.productName}}</h5>
+								</div>
+								<div>by {{product.manufacturer}}</div>
+								<div>
+									<app-rating class="ratingcolor" [rate]='product.rating'></app-rating>
+								</div>
+								<hr class="hrcolor">
+								<div>BookID: {{product.productCode}}</div>
+								<div>Price: {{product.price}}</div>
+								<div>Description: {{product.description}}</div>
+							</td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div class="card-footer">
+					<a class='btn btn-custom backbtnpos' (click)='onBack()'>
+						<i class='fa fa-chevron-left'></i> Back
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>

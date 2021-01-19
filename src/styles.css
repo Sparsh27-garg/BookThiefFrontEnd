@@ -1,0 +1,43 @@
+h1 {
+	color: #369;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 250%;
+}
+
+.divider-vertical {
+	height: 50px;
+	margin: 0 9px;
+	border-left: 1px solid #F2F2F2;
+	border-right: 1px solid #FFF;
+}
+
+.ng-valid[required] {
+	border-left: 5px solid #42A948;
+	/* green */
+}
+
+.ng-dirty.ng-invalid[required] {
+	border-left: 5px solid #a94442;
+	/* red */
+}
+
+
+/********************************************************************/
+
+.txtcolor {
+	color: #ff0080;
+}
+
+.ratingcolor {
+	color: #ff8040;
+}
+
+.cardpos {
+	position: relative;
+	top: 75px;
+	width: 50%;
+}
+
+.errorcolor {
+	color: red;
+}

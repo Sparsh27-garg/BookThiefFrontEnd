@@ -1,0 +1,19 @@
+.cardpos{
+    position: relative; top: 75px; left: 380px; width: 46%;
+}
+
+.paymentcardpos{
+    position: relative; 
+    top: 75px; 
+    left: 380px; 
+    text-align: center; 
+    width: 43%;
+}
+
+.tableheadercolor{
+    color: blue;
+}
+
+.center{
+    text-align:center;
+}
